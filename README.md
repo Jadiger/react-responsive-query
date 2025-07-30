@@ -1,5 +1,5 @@
 
-# react-responsive-query v1.1.3
+# react-responsive-query v1.1.4
 
 A lightweight and customizable React hook to detect responsive breakpoints based on the window width. Perfect for managing responsive UI logic directly in your React components without relying on CSS media queries.
 
