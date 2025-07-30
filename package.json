@@ -1,6 +1,6 @@
 {
   "name": "react-responsive-query",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -17,7 +17,22 @@
     "build": "tsup src/index.ts --format esm,cjs --dts",
     "test": "vitest"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "react hook",
+    "responsive",
+    "responsive design",
+    "breakpoint",
+    "breakpoints",
+    "media query",
+    "custom hook",
+    "window width",
+    "useBreakpoint",
+    "typescript",
+    "react typescript",
+    "mobile first",
+    "react responsive"
+  ],
   "author": "",
   "license": "ISC",
   "description": "",
