@@ -1,16 +1,15 @@
-
-# react-responsive-query
+# react-responsive-query v1.0.3
 
 A lightweight and customizable React hook to detect responsive breakpoints based on the window width. Perfect for managing responsive UI logic directly in your React components without relying on CSS media queries.
 
 ## Features
 
-- Tracks current window width in real-time
-- Determines if the viewport is mobile, tablet, or desktop based on configurable breakpoints
-- Fully customizable breakpoint values with sensible defaults
-- Written in TypeScript with full type declarations
-- Zero dependencies except React
-- Easy to use and integrate
+* Tracks current window width in real-time
+* Determines if the viewport is mobile, tablet, or desktop based on configurable breakpoints
+* Fully customizable breakpoint values with sensible defaults
+* Written in TypeScript with full type declarations
+* Zero dependencies except React
+* Easy to use and integrate
 
 ## Installation
 
@@ -51,14 +50,16 @@ export default ExampleComponent
 
 Returns an object containing the current window width and booleans indicating the active breakpoint.
 
-| Property  | Type    | Description                                                  |
-| --------- | ------- | ------------------------------------------------------------|
-| `width`   | number  | The current window width in pixels                           |
-| `isMobile`| boolean | `true` if width is less than the tablet breakpoint          |
-| `isTablet`| boolean | `true` if width is between tablet and desktop breakpoints   |
-| `isDesktop`| boolean| `true` if width is greater than or equal to the desktop breakpoint |
+| Property    | Type    | Description                                                        |
+| ----------- | ------- | ------------------------------------------------------------------ |
+| `width`     | number  | The current window width in pixels                                 |
+| `isMobile`  | boolean | `true` if width is less than the tablet breakpoint                 |
+| `isTablet`  | boolean | `true` if width is between tablet and desktop breakpoints          |
+| `isDesktop` | boolean | `true` if width is greater than or equal to the desktop breakpoint |
 
-- `config` (optional): An object to customize breakpoint values. Defaults to:
+### Default Config
+
+You can provide your own `config` object, or rely on these default values:
 
 ```ts
 {
@@ -74,8 +75,18 @@ Instead of scattering CSS media queries or relying on large UI frameworks, this 
 
 ## Contributing
 
-Contributions, bug reports, and feature requests are welcome! Please see the [issues page](https://github.com/yourusername/react-responsive-query/issues) to get started.
+Contributions, bug reports, and feature requests are welcome!
+Please visit the [issues page](https://github.com/Jadiger/react-responsive-query/issues) to get started.
+
+## Build the package
+
+To build the package locally:
+
+```bash
+npm install
+npm run build
+```
 
 ## License
 
-MIT © 2025 Jadiger Turganbaev
+MIT © 2025 [Jadiger Turganbaev](https://github.com/Jadiger)
