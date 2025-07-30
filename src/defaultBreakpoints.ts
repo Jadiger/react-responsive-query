@@ -1,5 +1,8 @@
 export const defaultBreakpoints = {
-  mobile: 0,
-  tablet: 768,
-  desktop: 1024,
+  xs: 0,
+  sm: 480,
+  md: 768,
+  lg: 1024,
+  xl: 1280,
+  xxl: 1536,
 }
