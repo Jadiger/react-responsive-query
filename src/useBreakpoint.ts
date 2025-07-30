@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import { BreakpointConfig } from './types'
+import { BreakpointConfig, BreakpointFlags } from './types'
 import { defaultBreakpoints } from './defaultBreakpoints'
 
-export function useBreakpoint(config?: BreakpointConfig) {
+export function useBreakpoint(config?: BreakpointConfig): BreakpointFlags {
   const breakpoints = { ...defaultBreakpoints, ...config }
   const [width, setWidth] = useState(
     typeof window !== 'undefined' ? window.innerWidth : 0
@@ -15,13 +15,13 @@ export function useBreakpoint(config?: BreakpointConfig) {
   }, [])
 
   const ordered = Object.entries(breakpoints).sort(([, a], [, b]) => a - b)
-  let current: string = ordered[0][0]
+  let current: keyof BreakpointConfig = ordered[0][0] as keyof BreakpointConfig
 
   for (let i = 0; i < ordered.length; i++) {
     const [key, min] = ordered[i]
     const nextMin = ordered[i + 1]?.[1]
     if (width >= min && (nextMin === undefined || width < nextMin)) {
-      current = key
+      current = key as keyof BreakpointConfig
       break
     }
   }
@@ -34,18 +34,18 @@ export function useBreakpoint(config?: BreakpointConfig) {
         width >= min && (max === undefined || width < max),
       ]
     })
-  )
+  ) as { [key: string]: boolean }
 
-  const isMobile = width < breakpoints.md
-  const isTablet = width >= breakpoints.md && width < breakpoints.lg
-  const isDesktop = width >= breakpoints.lg
+  const isMobile = width < (breakpoints.md ?? 768)
+  const isTablet = width >= (breakpoints.md ?? 768) && width < (breakpoints.lg ?? 1024)
+  const isDesktop = width >= (breakpoints.lg ?? 1024)
 
   return {
     width,
-    current,       // e.g. "md", "lg", etc.
+    current,
     isMobile,
     isTablet,
     isDesktop,
-    ...technicalFlags, // isSm, isMd, isXl...
+    ...technicalFlags,
   }
 }
